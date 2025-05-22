@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibility Checker</title>
+</head>
+<body>
+    <input type="number" id="numInput" placeholder="Enter a number..." />
+    <button onclick="checkDivisionBy3Or5()">Check</button>
+    <p id="output"></p>
+
+    <script>
+        function checkDivisionBy3Or5() {
+            let number = parseInt(document.getElementById("numInput").value);
+            let output = "";
+
+            if (number % 3 === 0 && number % 5 === 0) {
+                output = "Divisible by both 3 and 5 ✅";
+            } else if (number % 3 === 0) {
+                output = "Only divisible by 3 ✅";
+            } else if (number % 5 === 0) {
+                output = "Only divisible by 5 ✅";
+            } else {
+                output = "Not divisible ❌";
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
